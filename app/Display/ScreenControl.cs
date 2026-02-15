@@ -19,10 +19,11 @@ namespace GHelper.Display
         {
             if (force || AppConfig.Is("screen_auto"))
             {
+                int overdrive = AppConfig.Get("overdrive");
                 if (SystemInformation.PowerStatus.PowerLineStatus == PowerLineStatus.Online)
-                    SetScreen(MAX_REFRESH, 1);
+                    SetScreen(MAX_REFRESH, overdrive);
                 else
-                    SetScreen(MIN_RATE, 0);
+                    SetScreen(MIN_RATE, overdrive);
             }
             else
             {

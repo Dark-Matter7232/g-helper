@@ -1280,7 +1280,8 @@ namespace GHelper
         private void Button60Hz_Click(object? sender, EventArgs e)
         {
             AppConfig.Set("screen_auto", 0);
-            ScreenControl.SetScreen(ScreenControl.MIN_RATE, 0);
+            // Keep current overdrive state so users can use OD at any refresh rate.
+            ScreenControl.SetScreen(ScreenControl.MIN_RATE);
         }
 
 
